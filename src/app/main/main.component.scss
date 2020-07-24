@@ -1,0 +1,76 @@
+.btn-primary {
+  box-shadow: 0 3px #cf4e04;
+  border: none !important;
+  backface-visibility: hidden;
+}
+
+#header-sticky-top {
+  position: sticky;
+  top: 0;
+}
+
+#Carrinho {
+  position: fixed;
+  z-index: 3;
+  right: 0;
+  top: 0;
+}
+
+
+.btn-primary:active{
+  transform: translateY(2px);
+  backface-visibility: hidden;
+  box-shadow: 0 1px #8f3502;
+}
+
+.overlay {
+  width: 100%;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  transition: all .3s ease-in-out;
+
+}
+
+.open {
+  width: 30%;
+  transition: all .3s ease-in-out;
+}
+
+.open > .text {
+  opacity: 1;
+  transition: all .3s ease-in-out;
+}
+
+.closed > .text {
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .open {
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    transition: all .3s ease-in-out;
+  }
+  .icon-shop-open {
+    right: 90%;
+    transition: all .3s ease-in-out;
+  }
+
+}
+
+
+.closed {
+  width: 0%;
+  transition: all .3s ease-in-out;
+}
+
+.icon-shop-close {
+  right: 0%;
+  transition: all .3s ease-in-out;
+}
+
+
+
