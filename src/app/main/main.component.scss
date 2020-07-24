@@ -11,21 +11,14 @@
   top: 0;
 }
 
+
 .open {
   width: 30%;
   transition: all .3s ease-in-out;
 }
 
-.open > .text {
-  opacity: 1;
-  transition: all .3s ease-in-out;
-}
 
-.closed > .text {
-  opacity: 0;
-  transition: all .3s ease-in-out;
-}
-
+//Media query para utilização mobile
 @media screen and (max-width: 768px) {
   .open {
     background: rgba(0, 0, 0, 0.75);
