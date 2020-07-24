@@ -1,15 +1,17 @@
+
+//Modificação do botão original do Bootstrap para adequação do projeto.
 .btn-primary {
   box-shadow: 0 3px #cf4e04;
   border: none !important;
   backface-visibility: hidden;
 }
-
 .btn-primary:active{
   transform: translateY(2px);
   backface-visibility: hidden;
   box-shadow: 0 1px #8f3502;
 }
 
+//Overlay para foco em determinado objeto.
 .overlay {
   width: 100%;
   min-height: 100%;
