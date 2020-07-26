@@ -15,6 +15,10 @@ const routes: Routes = [
       {
         path: 'inicio',
         loadChildren: () => import('./inicio/inicio.module').then(m => m.InicioModule)
+      },
+      {
+        path: 'pokemon',
+        loadChildren: () => import('./inicio/inicio.module').then(m => m.InicioModule)
       }
     ]
   },

@@ -1,0 +1,25 @@
+<div class="container-flud mt-2">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-secondary m-0">Pokemons</h3>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12 d-flex mb-2">
+            <div style="cursor: pointer;" 
+                (click)="escolherAba(i)" 
+                *ngFor="let menu of menuItens; let i = index" 
+                [ngClass]="{'bg-secondary': !menu.ativo, 'bg-primary': menu.ativo}" 
+                class="bg-secondary p-1 px-2 text-white mr-1">
+                {{menu.nomeMenu |titlecase}}
+            </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div [@CardState] *ngFor="let pokemon of pokemonsSearched" class="col-6 col-md-4 col-lg-3">
+            <app-showcase-card  [pokemon]="pokemon"></app-showcase-card>
+        </div>
+    </div>
+</div>

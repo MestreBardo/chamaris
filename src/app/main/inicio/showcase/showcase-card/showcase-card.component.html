@@ -1,0 +1,27 @@
+<div class="bg-light p-2 mb-2 position-relative">
+    <div style="cursor: pointer;" (click)="abrirPokemon()">
+    
+        <small *ngIf="pokemon.extraInfo && pokemonCarregado" 
+            [ngClass]="{'badge-danger':pokemon.extraInfo === 'QUENTE', 'badge-primary':pokemon.extraInfo === 'DO FORNO'}" 
+            style="position: absolute" class="badge">
+            {{pokemon.extraInfo}}
+        </small>
+        
+        <div class="d-flex justify-content-center">
+        <img *ngIf="imageUrl !== ''" class="img-fluid" style="max-height: 160px; min-height: 160px;" [src]="imageUrl" onerror="this.src = '../../../../assets/pics/semImagem.png'">
+        <img *ngIf="imageUrl === ''" class="img-fluid" style="max-height: 160px; min-height: 160px;" src='../../../../../assets/pics/Loader.svg'>
+    
+        </div>
+        
+        
+        
+        <H4 *ngIf="pokemonCarregado" class="mb-1"> {{pokemonCarregado.nome | titlecase}}</H4>
+        <p *ngIf="pokemonCarregado" class="mb-1 text-primary">R$ {{pokemonCarregado.valor}},00</p>
+    </div>
+    <button [disabled]="!pokemonCarregado" class="btn btn-primary btn-sm d-flex align-items-center">
+            <svg  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="20" height="20"
+            viewBox="0 0 172 172"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M80.625,26.875v53.75h-53.75v10.75h53.75v53.75h10.75v-53.75h53.75v-10.75h-53.75v-53.75z"></path></g></g></svg>
+            <span class="ml-2">Carrinho</span></button>
+</div>
