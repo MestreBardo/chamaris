@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-carrinho',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carrinho.component.scss']
 })
 export class CarrinhoComponent implements OnInit {
+
+  @Output() closed: EventEmitter<boolean> = new EventEmitter();
+  pokemonsCarrinho = [];
 
   constructor() { }
 
