@@ -26,7 +26,7 @@ export class ShowcaseCardComponent implements OnInit {
   }
 
   abrirPokemon() {
-    this.router.navigate(['Main', 'pokemon'])
+    this.router.navigate(['Main', 'pokemon']);
   }
 
 }

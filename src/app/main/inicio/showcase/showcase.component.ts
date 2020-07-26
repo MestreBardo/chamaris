@@ -27,23 +27,27 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
 export class ShowcaseComponent implements OnInit {
   menuItens = MenuItens.itens;
   pokemonsSearched = [];
+  abaAtual = '';
   constructor(private pokemonService: PokemonService) { }
 
   escolherAba(indexAba: number) {
     const aba = this.menuItens[indexAba].nomeMenu.replace(' ', '');
-    this.menuItens = this.menuItens.map( item => {
+    if (aba !== this.abaAtual) {
+      this.menuItens = this.menuItens.map( item => {
         item.ativo = false;
         return item;
       });
-    this.pokemonService
-      .buscarPokemons(aba, 1)
-      .then((pokemons: any) => {
-        console.log(pokemons);
-        this.pokemonsSearched = pokemons;
-      });
-    this.menuItens[indexAba].ativo = true;
+      this.pokemonService
+        .buscarPokemons(aba, 1)
+        .then((pokemons: any) => {
+          this.pokemonsSearched = pokemons;
+        });
+      this.menuItens[indexAba].ativo = true;
+      this.abaAtual = aba;
+    }
   }
   ngOnInit() {
+    this.escolherAba(0);
   }
 
 }
