@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, Renderer2, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-inicio',
@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private renderer: Renderer2) { }
+  atualCordenadaX: number;
+  atualPosicao = 0;
+  @ViewChild('swipe', {static: true}) swipeEl: ElementRef;
   ngOnInit() {
   }
 
