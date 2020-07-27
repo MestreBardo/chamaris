@@ -20,7 +20,10 @@ export class PokemonService {
       });
     } else {
       return this.http.get('https://pokeapi.co/api/v2/type/fire')
-      .pipe(take(1), map( (x: any) => x.pokemon.map( pokemon => {return { url: pokemon.pokemon.url}; })))
+      .pipe(take(1), map( (x: any) => x.pokemon.map( pokemon =>
+        { return {
+          url: pokemon.pokemon.url, nome: pokemon.pokemon.name};
+        })))
       .toPromise();
 
     }

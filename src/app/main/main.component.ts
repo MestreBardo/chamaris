@@ -10,14 +10,21 @@ import { StorageService } from 'src/servicos/storage.service';
 export class MainComponent implements OnInit, OnDestroy {
   valorCarrinho = 0;
   subscription: any;
+  subscriptionCompras: any;
+  numeroCompras = 0;
   open = false;
+  tipo = 'carrinho';
   constructor(private storageService: StorageService) { }
 
   ngOnInit() {
     this.subscription = this.storageService.atualizarCarrinho.subscribe(carrinhoAtualizado => {
       this.valorCarrinho = carrinhoAtualizado.valorTotal;
     });
+    this.subscriptionCompras = this.storageService.atualizarComprasFeitas.subscribe(compras => {
+      this.numeroCompras = compras.length;
+    });
     this.storageService.carregarCarrinhoAtual();
+    this.storageService.carregarCompras();
   }
 
   ngOnDestroy() {

@@ -28,6 +28,7 @@ export class ShowcaseComponent implements OnInit {
   menuItens = MenuItens.itens;
   pokemonsSearched = [];
   abaAtual = '';
+  valorBusca = '';
   constructor(private pokemonService: PokemonService) { }
 
   escolherAba(indexAba: number) {
