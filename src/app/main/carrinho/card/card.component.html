@@ -13,13 +13,13 @@
             <div class="d-flex align-items-center">
                 <p class="m-0 text-primary mt-1 w-100">R$ {{pokemon.valor}},00</p>
                 <div class="d-flex ml-auto  border border-secondary border-top-0 border-left-0 border-right-0 ml-auto">
-                    <button class="btn text-primary d-flex align-items-center bg-white p-2 "> 
+                    <button [disabled]="quantidadeAtual < 2" (click)="mudaQuantidade('negativo')" class="btn text-primary d-flex align-items-center bg-white p-2 "> 
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             width="15" height="15"
                             viewBox="0 0 172 172"
                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M26.875,80.625v10.75h118.25v-10.75z"></path></g></g></svg> </button>
-                    <input [(ngModel)]="pokemon.quantidade" type="number" class="form-control text-center form-control-sm w-50 ">
-                    <button class="btn text-primary bg-white p-2 d-flex align-items-center"> 
+                    <input (change)="verificaMudanca($event)" (input)="mudarQuantidade($event)" [(ngModel)]="quantidadeAtual" type="number" class="form-control text-center form-control-sm w-50 ">
+                    <button (click)="mudaQuantidade('positivo')" class="btn text-primary bg-white p-2 d-flex align-items-center"> 
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             width="15" height="15"
                             viewBox="0 0 172 172"
@@ -28,7 +28,7 @@
             </div>
             
         </div>
-        <div class="d-flex flex-column ml-auto p-2">
+        <div (click)="deletaPokemon()" class="d-flex flex-column ml-auto p-2">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                 width="32" height="32"
                 viewBox="0 0 172 172"

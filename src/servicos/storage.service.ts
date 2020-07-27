@@ -27,6 +27,26 @@ export class StorageService {
     this.atualizarCarrinho.next(JSON.parse(localStorage.getItem('carrinhoAtual')));
   }
 
+  atualizaPokemonCarrinho(pokemon: any) {
+    const carrinhoAtual = JSON.parse(localStorage.getItem('carrinhoAtual'));
+    const findIndex = carrinhoAtual.pokemon.findIndex( pokemonAtual => pokemonAtual.id === pokemon.id);
+    carrinhoAtual.valorTotal -= carrinhoAtual.pokemon[findIndex].valor;
+    carrinhoAtual.valorTotal += pokemon.valor;
+    carrinhoAtual.pokemon[findIndex] = pokemon;
+    localStorage.setItem('carrinhoAtual', JSON.stringify(carrinhoAtual));
+    this.atualizarCarrinho.next(carrinhoAtual);
+
+  }
+
+  deletaPokemonCarrinho(id: number) {
+    const carrinhoAtual = JSON.parse(localStorage.getItem('carrinhoAtual'));
+    const findIndex = carrinhoAtual.pokemon.findIndex( pokemonAtual => pokemonAtual.id === id);
+    carrinhoAtual.valorTotal -= carrinhoAtual.pokemon[findIndex].valor;
+    carrinhoAtual.pokemon.splice(findIndex, 1);
+    localStorage.setItem('carrinhoAtual', JSON.stringify(carrinhoAtual));
+    this.atualizarCarrinho.next(carrinhoAtual);
+  }
+
   adicionarCarrinho(pokemon: any) {
     const carrinhoAtual = JSON.parse(localStorage.getItem('carrinhoAtual'));
     const findIndex = carrinhoAtual.pokemon.findIndex( pokemonAtual => pokemonAtual.id === pokemon.id);
