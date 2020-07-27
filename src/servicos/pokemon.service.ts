@@ -44,4 +44,16 @@ export class PokemonService {
     }))
     .toPromise();
   }
+
+  getCharacteristic(id: any) {
+    return this.http.get(`https://pokeapi.co/api/v2/characteristic/${id}/`)
+    .pipe(take(1))
+    .toPromise();
+  }
+
+  buscarPokemonURLFull(url: string) {
+    return this.http.get(url)
+    .pipe(take(1))
+    .toPromise();
+  }
 }

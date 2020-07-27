@@ -1,4 +1,4 @@
-<div class="d-flex flex-column justify-content-between" style="height: 100%;">
+<div class="d-flex flex-column justify-content-between h-100" >
   <ng-container [ngSwitch]="pokemonsCarrinho.length">
     <ng-template ngSwitchCase=0>
         <div class="d-flex h-100 flex-column justify-content-center align-items-center">
@@ -18,7 +18,7 @@
   
   </ng-container>
 
-  <div class="d-flex flex-column mt-auto">
+  <div *ngIf="pokemonsCarrinho.length > 0" class="d-flex flex-column mt-auto">
       <div class="one-edge-shadow bg-white shadow-sm mb-2 p-2">
         <p class="m-0">Resumo</p>
         <div class="d-flex">
