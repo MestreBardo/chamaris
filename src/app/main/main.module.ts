@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './main.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { CardComponent } from './carrinho/card/card.component';
+import { FormsModule} from '@angular/forms';
 
 
 
@@ -12,7 +13,8 @@ import { CardComponent } from './carrinho/card/card.component';
   declarations: [MainComponent, CarrinhoComponent, CardComponent],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    FormsModule
   ]
 })
 export class MainModule { }

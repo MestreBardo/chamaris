@@ -18,7 +18,7 @@
         <H4 *ngIf="pokemonCarregado" class="mb-1"> {{pokemonCarregado.nome | titlecase}}</H4>
         <p *ngIf="pokemonCarregado" class="mb-1 text-primary">R$ {{pokemonCarregado.valor}},00</p>
     </div>
-    <button [disabled]="!pokemonCarregado" class="btn btn-primary btn-sm d-flex align-items-center">
+    <button (click)="adicionarAoCarrinho()" [disabled]="!pokemonCarregado" class="btn btn-primary btn-sm d-flex align-items-center">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
             width="20" height="20"
             viewBox="0 0 172 172"
