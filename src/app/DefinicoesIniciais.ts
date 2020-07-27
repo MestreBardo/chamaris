@@ -1,4 +1,9 @@
 export class DefinicoesIniciais {
+    static carrinhoInicial = {
+      pokemon: [],
+      quantidadeCarrinho: 0,
+      valorTotal: 0
+    };
     static quentes = [
         {
           url: 'https://pokeapi.co/api/v2/pokemon/6/',

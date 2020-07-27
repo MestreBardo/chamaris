@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { StorageService } from './storage.service';
 import { take, map, skip, tap, switchMapTo } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
   tiposBuscaMemoria = ['quentes', 'doForno'];
-
   constructor(private http: HttpClient, private storageService: StorageService) {
   }
 
@@ -38,10 +38,24 @@ export class PokemonService {
         id: x.id,
         nome: x.name,
         sprite: x.sprites.front_default,
-        valor: x.base_experience * 2
-
+        valor: x.base_experience * 2,
+        imagemCarrinho: x.sprites.front_default,
+        quantidade: 1,
+        url
       };
     }))
+    .toPromise();
+  }
+
+  getCharacteristic(id: any) {
+    return this.http.get(`https://pokeapi.co/api/v2/characteristic/${id}/`)
+    .pipe(take(1))
+    .toPromise();
+  }
+
+  buscarPokemonURLFull(url: string) {
+    return this.http.get(url)
+    .pipe(take(1))
     .toPromise();
   }
 }

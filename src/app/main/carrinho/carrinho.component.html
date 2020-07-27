@@ -1,4 +1,4 @@
-<div class="d-flex flex-column justify-content-between" style="height: 100%;">
+<div class="d-flex flex-column justify-content-between h-100" >
   <ng-container [ngSwitch]="pokemonsCarrinho.length">
     <ng-template ngSwitchCase=0>
         <div class="d-flex h-100 flex-column justify-content-center align-items-center">
@@ -11,19 +11,19 @@
     </ng-template>
     <ng-template ngSwitchDefault>
       <div class="mt-3 mt-md-0 scroll " style="overflow: auto; max-height: 68vh;">
-        <app-card *ngFor="let item of pokemonsCarrinho"></app-card>
+        <app-card [pokemon]="item" *ngFor="let item of pokemonsCarrinho"></app-card>
       </div>
         
     </ng-template>
   
   </ng-container>
 
-  <div class="d-flex flex-column mt-auto">
+  <div *ngIf="pokemonsCarrinho.length > 0" class="d-flex flex-column mt-auto">
       <div class="one-edge-shadow bg-white shadow-sm mb-2 p-2">
         <p class="m-0">Resumo</p>
         <div class="d-flex">
           <p class="text-primary m-0">TOTAL</p>
-          <p class="m-0 ml-auto text-secondary">R$ 25,00</p>
+          <p class="m-0 ml-auto text-secondary">R$ {{valorCarrinho}},00</p>
         </div>
           
           
