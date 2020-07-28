@@ -31,4 +31,9 @@ export class MainComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  abrirLateral(lateral: string) {
+    this.tipo = lateral;
+    this.open = !this.open;
+  }
+
 }

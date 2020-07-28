@@ -14,6 +14,8 @@ import { CardCartaoComponent } from './carrinho/card-cartao/card-cartao.componen
 import { NumeroCartaoPipe } from './carrinho/lista-cartoes/add-cartao/numero-cartao.pipe';
 import { FiltraAtivosPipe } from './carrinho/lista-cartoes/filtra-ativos.pipe';
 import { ResumoComponent } from './carrinho/resumo/resumo.component';
+import { HistoricoComponent } from './historico/historico.component';
+import { CardHistoricoComponent } from './historico/card-historico/card-historico.component';
 
 
 
@@ -21,7 +23,7 @@ import { ResumoComponent } from './carrinho/resumo/resumo.component';
   declarations: [MainComponent,
     CarrinhoComponent, CardComponent,
     ListaCarrinhoComponent, ListaCartoesComponent,
-    AddCartaoComponent, CardCartaoComponent, NumeroCartaoPipe, FiltraAtivosPipe, ResumoComponent],
+    AddCartaoComponent, CardCartaoComponent, NumeroCartaoPipe, FiltraAtivosPipe, ResumoComponent, HistoricoComponent, CardHistoricoComponent],
   imports: [
     CommonModule,
     MainRoutingModule,

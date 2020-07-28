@@ -15,7 +15,7 @@ export class ListaCarrinhoComponent implements OnInit {
   constructor(private storageService: StorageService) { }
 
   ngOnInit() {
-    console.log(this.pokemonsCarrinho);
+
   }
 
 

@@ -4,11 +4,27 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { StorageService } from 'src/servicos/storage.service';
 import { Subscription } from 'rxjs';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-carrinho',
   templateUrl: './carrinho.component.html',
-  styleUrls: ['./carrinho.component.scss']
+  styleUrls: ['./carrinho.component.scss'],
+  animations: [
+    trigger('formState', [
+      transition(':enter',
+      [
+        style({
+          opacity: 0,
+          transform: 'translateX(-150px)'
+        }),
+        animate('1s ease-out', style({
+          opacity: 1,
+          transform: 'translateX(0)'
+        })),
+      ]),
+    ])
+  ]
 })
 export class CarrinhoComponent implements OnInit, OnDestroy {
 

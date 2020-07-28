@@ -11,7 +11,6 @@ export class CardCartaoComponent implements OnInit {
   constructor(private storageService: StorageService) { }
   @Input() cartao: any;
   ngOnInit(): void {
-    console.log(this.cartao);
   }
 
   deletarCartao() {

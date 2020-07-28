@@ -7,6 +7,7 @@ import { ShowcaseComponent } from './showcase/showcase.component';
 import { ShowcaseCardComponent } from './showcase/showcase-card/showcase-card.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PokemonFilterPipe } from './showcase/pokemon-filter.pipe';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 
@@ -16,7 +17,8 @@ import { PokemonFilterPipe } from './showcase/pokemon-filter.pipe';
     CommonModule,
     InicioRoutingModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    CarouselModule.forRoot()
   ]
 })
 export class InicioModule { }

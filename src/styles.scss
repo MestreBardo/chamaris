@@ -4,9 +4,11 @@
 
 h1, h2, h3, h4, h5{
   font-family: 'Bebas Neue', cursive;
+  white-space: nowrap
 }
 p, span, small {
   font-family: 'MuseoModerno', cursive;
+  white-space: nowrap
 }
 
 .pointer {
