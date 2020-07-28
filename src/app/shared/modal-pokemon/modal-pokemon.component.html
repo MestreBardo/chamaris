@@ -29,13 +29,13 @@
                             <small class="text-white">
                                 Peso
                             </small>
-                            <h5 class="text-white">{{pokemon.weight}} KG</h5>
+                            <h5 class="text-white">{{pokemon.weight | ajustaValores}} KG</h5>
                         </div>
                         <div class="col-6">
                             <small class="text-white">
                                 Altura
                             </small>
-                            <h5 class="text-white">{{pokemon.height}} M</h5>
+                            <h5 class="text-white">{{pokemon.height | ajustaValores}} M</h5>
                         </div>
                         <div *ngIf="pokemon.abilities" class="col-6">
                             <small class="text-white">
